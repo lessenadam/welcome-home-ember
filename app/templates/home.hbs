@@ -1,0 +1,10 @@
+<h3>Organizations</h3>
+{{selectable-list 
+    listItems=organizations 
+    itemClick="handleClick"
+    createNewClick="createNew"
+}}
+
+{{#editable-message selection=selection}}
+    Messages
+{{/editable-message}}

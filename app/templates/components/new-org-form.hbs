@@ -1,0 +1,19 @@
+<form>
+  <fieldset>
+    <label>
+      Organization
+      {{input type="text" value=organization height="18px"}}
+    </label>
+    <br>
+    <label>
+      Message
+      {{input type="text" value=message height="18px" width="400px"}}
+    </label>
+  </fieldset>
+  <fieldset>
+    <button {{action "cancel"}} class="btn">Cancel</button>
+    <button {{action "save"}} class="btn">Save</button>
+  </fieldset>
+</form>
+
+{{yield}}

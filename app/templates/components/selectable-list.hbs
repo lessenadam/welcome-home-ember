@@ -1,0 +1,6 @@
+<li {{action "addNew"}}>Add new...</li>
+
+{{#each listItems as |item|}}
+    <li {{action "itemClick" item}}>{{item.name}}</li>
+{{/each}}
+
