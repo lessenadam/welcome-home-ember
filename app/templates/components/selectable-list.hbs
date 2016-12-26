@@ -1,6 +1,10 @@
 <li {{action "addNew"}}>Add new...</li>
-
+{{!-- maybe should have a store that tracks data based on some id...??? --}}
+{{!-- do items have ids? --}}
 {{#each listItems as |item|}}
-    <li {{action "itemClick" item}}>{{item.name}}</li>
+    <li>
+        <span {{action "itemClick" item}}>{{item.name}}</span> 
+        <button {{action 'showModal' 'confirmation-modal' item}} class="delete">Delete</button>
+    </li>
 {{/each}}
 

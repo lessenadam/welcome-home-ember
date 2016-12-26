@@ -18,6 +18,8 @@ export default Ember.Route.extend({
         return this.get('store').findAll('org');
     },
 
+    // what about computing observing changes to the store
+
     setupController(controller, model) {
         console.warn('in setupController');
         this._super(controller, model);
@@ -27,12 +29,10 @@ export default Ember.Route.extend({
 
     actions: {
         handleClick(org) {
-            console.warn('echo');
             set(this.controllerFor('home'), 'selection', org);
         },
 
         createNew() {
-            console.log('in create new');
             this.transitionTo('create');
         }
 

@@ -1,7 +1,19 @@
 <h3>{{yield}}</h3>
 
 {{#if selection}}
-    <p>Selected: {{selection.name}}</p>
+    {{#if isEditing}}
+        <label>Organization:</label><br>
+        {{!-- <input id="name" style="width:100%" class="edit" value={{name}}> --}}
+        {{input value=name width="100%"}}
+        <label>Message:</label><br>
+        {{!-- <input id="message" style="width:100%" class="edit" value={{message}}> --}}
+        {{input value=message width="100%"}}
+        <button {{action "cancel"}}>Cancel</button>
+        <button{{action "save"}}>Save</button>
+    {{else}}
+        <button {{action "enterEditMode"}}>Edit</button>
+        <p>Selected: {{name}}</p>
 
-    <p>{{selection.message}}</p>
+        <p>{{message}}</p>
+    {{/if}}
 {{/if}}

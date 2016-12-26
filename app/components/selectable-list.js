@@ -10,8 +10,14 @@ export default Ember.Component.extend({
         },
 
         itemClick(item) {
-            console.warn('detected click on:', item);
-            this.sendAction('itemClick', item)
+            this.sendAction('itemClick', item);
+        },
+
+        delete(item) {
+            console.warn(item);
+        },
+        showModal(name, item) {
+            this.sendAction('showModal', name, item);
         }
     }
 });
